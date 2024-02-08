@@ -1,5 +1,5 @@
 vim.keymap.set("n", "<leader>v", vim.cmd.Ex, {desc='Open navigation'})
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle,{desc = 'Toggle undotree'})
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {desc = 'Toggle undotree'})
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>d", "\"_d", {desc = 'Delete without buffering'})
@@ -34,12 +34,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
-vim.keymap.set("n", "<C-a>", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<C-n>", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
+vim.keymap.set("n", "<leader>ha", mark.add_file, {desc= 'Adds to harpoon'})
+vim.keymap.set("n", "<leader>he", ui.toggle_quick_menu, {desc= 'Open harpoon'})
+vim.keymap.set("n", "<leader>hh", function() ui.nav_file(1) end, {desc= 'Harpoon to 1'})
+vim.keymap.set("n", "<leader>ht", function() ui.nav_file(2) end, {desc= 'Harpoon to 2'})
+vim.keymap.set("n", "<leader>hn", function() ui.nav_file(3) end, {desc= 'Harpoon to 3'})
+vim.keymap.set("n", "<leader>hs", function() ui.nav_file(4) end, {desc= 'Harpoon to 4'})
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -47,4 +47,3 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
